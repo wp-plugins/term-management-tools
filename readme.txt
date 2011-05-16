@@ -3,8 +3,8 @@ Contributors: scribu
 Donate link: http://scribu.net/paypal
 Tags: admin, category, tag, term, taxonomy, hierarchy, organize, manage
 Requires at least: 3.0
-Tested up to: 3.1-alpha
-Stable tag: trunk
+Tested up to: 3.1
+Stable tag: 1.0
 
 Allows you to merge terms and set term parents in bulk
 
