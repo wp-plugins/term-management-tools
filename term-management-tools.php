@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Term Management Tools
-Version: 1.1-alpha
+Version: 1.1
 Description: Allows you to merge terms and set term parents in bulk
 Author: scribu
 Author URI: http://scribu.net/
@@ -38,7 +38,7 @@ class Term_Management_Tools {
 	private function get_actions( $taxonomy ) {
 		$actions = array(
 			'merge'        => __( 'Merge', 'term-management-tools' ),
-			'change_tax'   => __( 'Change Taxonomy', 'term-management-tools' ),
+			'change_tax'   => __( 'Change taxonomy', 'term-management-tools' ),
 		);
 
 		if ( is_taxonomy_hierarchical( $taxonomy ) ) {
@@ -196,13 +196,9 @@ class Term_Management_Tools {
 
 		$js_dev = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '.dev' : '';
 
-		wp_enqueue_script( 'term-management-tools', plugins_url( "script$js_dev.js", __FILE__ ), array( 'jquery' ), '1.0' );
+		wp_enqueue_script( 'term-management-tools', plugins_url( "script$js_dev.js", __FILE__ ), array( 'jquery' ), '1.1' );
 
-		$strings = self::get_actions( $taxonomy );
-
-		$strings['warning'] = __( 'You are about to convert terms from a hierarchical taxonomy to a linear taxonomy.', 'term-management-tools' );
-
-		wp_localize_script( 'term-management-tools', 'tmtL10n', $strings );
+		wp_localize_script( 'term-management-tools', 'tmtL10n', self::get_actions( $taxonomy ) );
 	}
 
 	function inputs() {
@@ -228,12 +224,7 @@ class Term_Management_Tools {
 			if ( $new_tax == $taxonomy )
 				continue;
 
-			echo "<option value='$new_tax'";
-
-			if ( is_taxonomy_hierarchical( $taxonomy ) && !is_taxonomy_hierarchical( $new_tax ) )
-				echo " data-loose-hierarchy='1'";
-
-			echo ">{$tax_obj->label}</option>\n";
+			echo "<option value='$new_tax'>$tax_obj->label</option>\n";
 		}
 ?>
 		</select>
