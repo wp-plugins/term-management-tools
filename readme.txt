@@ -1,9 +1,8 @@
 === Term Management Tools ===
 Contributors: scribu
-Donate link: http://scribu.net/paypal
 Tags: admin, category, tag, term, taxonomy, hierarchy, organize, manage
 Requires at least: 3.0
-Tested up to: 3.1
+Tested up to: 3.2
 Stable tag: 1.1
 
 Allows you to merge terms and set term parents in bulk
