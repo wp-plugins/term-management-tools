@@ -1,10 +1,10 @@
 === Term Management Tools ===
-Contributors: scribu
-Tags: admin, category, tag, term, taxonomy, hierarchy, organize, manage
-Requires at least: 3.2
-Tested up to: 3.4
-Stable tag: trunk
-License: GPLv2 or later
+Contributors: scribu  
+Tags: admin, category, tag, term, taxonomy, hierarchy, organize, manage  
+Requires at least: 3.2  
+Tested up to: 3.5  
+Stable tag: 1.1.2  
+License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Allows you to merge terms, set term parents in bulk, and swap term taxonomies.
@@ -40,6 +40,9 @@ You can either install it automatically from the WordPress admin, or do it manua
 2. Set parent
 
 == Changelog ==
+
+= 1.1.2 =
+* added 'term_management_tools_term_merged' action hook. props Amit Gupta
 
 = 1.1.1 =
 * fixed error notices
